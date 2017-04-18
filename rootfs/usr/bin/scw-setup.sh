@@ -205,6 +205,7 @@ clusters:
 - name: local
   cluster:
     certificate-authority: /etc/kubernetes/pki/ca.pem
+    server: $KUBERNETES_MASTER_URL
 contexts:
 - context:
     cluster: local
