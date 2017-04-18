@@ -7,7 +7,7 @@ spec:
   hostNetwork: true
   containers:
   - name: kube-apiserver
-    image: gcr.io/google_containers/hyperkube:v1.5.3
+    image: gcr.io/google_containers/hyperkube:v1.6.1
     command:
     - /hyperkube
     - apiserver
@@ -24,6 +24,7 @@ spec:
     - --service-account-key-file=/etc/kubernetes/pki/apiserver-key.pem
     - --service-cluster-ip-range=172.16.0.0/16
     - --storage-backend=etcd3
+    - --storage-media-type=application/vnd.kubernetes.protobuf
     - --tls-cert-file=/etc/kubernetes/pki/apiserver.pem
     - --tls-private-key-file=/etc/kubernetes/pki/apiserver-key.pem
     - --token-auth-file=/etc/kubernetes/pki/tokens.csv
