@@ -44,7 +44,7 @@ RUN apt-get -q update \
 
 # Install CNI plugins for kubelet cni mode
 RUN mkdir -p /opt/cni/bin \
-    && curl -fsSL 'https://github.com/containernetworking/cni/releases/download/v0.4.0/cni-amd64-v0.4.0.tgz' | tar xvz -C /opt/cni/bin/
+    && curl -fsSL 'https://github.com/containernetworking/cni/releases/download/v0.5.2/cni-amd64-v0.5.2.tgz' | tar xvz -C /opt/cni/bin/
 
 
 # Add local files into the root (extra config etc)
