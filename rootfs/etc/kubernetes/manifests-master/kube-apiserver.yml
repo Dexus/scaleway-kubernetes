@@ -7,12 +7,13 @@ spec:
   hostNetwork: true
   containers:
   - name: kube-apiserver
-    image: gcr.io/google_containers/hyperkube:v1.6.1
+    image: gcr.io/google_containers/hyperkube:v1.6.2
     command:
     - /hyperkube
     - apiserver
     - --admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota
     - --allow-privileged=true
+    - --authorization-mode=RBAC
     - --anonymous-auth=false
     - --basic-auth-file=/etc/kubernetes/pki/basic_auth.csv
     - --bind-address=0.0.0.0
