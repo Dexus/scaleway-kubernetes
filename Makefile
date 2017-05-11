@@ -1,6 +1,6 @@
 NAME               = etcd-docker-kubernetes-weave
-VERSION            = 1.6.2
-VERSION_ALIASES    = 1.6.2
+VERSION            = 1.6.3
+VERSION_ALIASES    = 1.6.3
 TITLE              = etcd-docker-kubernetes-weave
 DESCRIPTION        = An image to create etcd masters, kubernetes master+worker and a Weave VPN overlay network
 SOURCE_URL         = https://github.com/iosphere/scaleway-kubernetes
