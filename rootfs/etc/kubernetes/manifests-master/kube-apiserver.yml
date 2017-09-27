@@ -7,7 +7,7 @@ spec:
   hostNetwork: true
   containers:
   - name: kube-apiserver
-    image: gcr.io/google_containers/hyperkube:v1.6.6
+    image: gcr.io/google_containers/hyperkube:v1.7.6
     command:
     - /hyperkube
     - apiserver
@@ -20,7 +20,7 @@ spec:
     - --client-ca-file=/etc/kubernetes/pki/ca.pem
     - --etcd-servers=http://127.0.0.1:2379
     - --logtostderr=true
-    - --runtime-config=extensions/v1beta1=true,extensions/v1beta1/networkpolicies=true
+    - --runtime-config=extensions/v1beta1=true,networking.k8s.io/v1=true
     - --secure-port=6443
     - --service-account-key-file=/etc/kubernetes/pki/apiserver-key.pem
     - --service-cluster-ip-range=172.16.0.0/16
