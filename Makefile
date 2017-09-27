@@ -6,7 +6,7 @@ DESCRIPTION        = An image to create etcd masters, kubernetes master+worker a
 SOURCE_URL         = https://github.com/iosphere/scaleway-kubernetes
 
 IMAGE_VOLUME_SIZE  = 50G
-IMAGE_BOOTSCRIPT   = docker
+IMAGE_BOOTSCRIPT   = mainline
 DEFAULT_IMAGE_ARCH = x86_64
 
 ## Image tools  (https://github.com/scaleway/image-tools)
