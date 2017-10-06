@@ -40,6 +40,9 @@ RUN apt-get -q update \
         lxc \
         python-setuptools \
         parted \
+        ceph-fs-common \
+        ceph-common \
+        vim \
         ufw \
         vlan \
         zerotier-one \
