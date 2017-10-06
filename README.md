@@ -104,8 +104,15 @@ make
 # Make local image on additional 50gb volume
 make install_on_disk
 
-# Copy image to your private Scaleway image registry
-make image_on_local
+# Stop machine and make a snapshot -> image from the additional 50gb Volume
+# Delete imagebuilder
+
+# Optional: Copy image to your private Scaleway image registry
+# This would launch another Scaleway machine, which
+# will in turn get the image as a tarfile on an additional harddrive
+# and then take a snapshot
+# This might not be possible if you have exhausted all public IPs
+#make image_on_local
 
 # Logout
 exit
