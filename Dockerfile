@@ -29,6 +29,8 @@ RUN apt-get -q update \
         aufs-tools \
         btrfs-tools \
         bridge-utils \
+        build-essential \
+        libssl-dev \
         cgroupfs-mount \
         docker-engine=1.12.6-0~ubuntu-xenial \
         jq \
