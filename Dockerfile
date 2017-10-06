@@ -39,6 +39,7 @@ RUN apt-get -q update \
         kmod \
         lxc \
         python-setuptools \
+        parted \
         ufw \
         vlan \
         zerotier-one \
