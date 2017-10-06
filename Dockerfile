@@ -42,6 +42,7 @@ RUN apt-get -q update \
         ufw \
         vlan \
         zerotier-one \
+        unattended-upgrades \
         && apt-get clean
 
 # Do not upgrade Docker
@@ -51,6 +52,9 @@ RUN apt-mark hold docker-engine
 RUN mkdir -p /opt/cni/bin \
     && curl -fsSL 'https://github.com/containernetworking/cni/releases/download/v0.6.0/cni-amd64-v0.6.0.tgz' | tar xvz -C /opt/cni/bin/ \
     && curl -fsSL 'https://github.com/containernetworking/plugins/releases/download/v0.6.0/cni-plugins-amd64-v0.6.0.tgz' | tar xvz -C /opt/cni/bin/
+
+# Automatic security updates
+RUN dpkg-reconfigure -fnoninteractive unattended-upgrades
 
 # Add local files into the root (extra config etc)
 COPY ./rootfs/ /

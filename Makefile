@@ -1,4 +1,4 @@
-NAME               = etcd-docker-kubernetes-weave-1.7.8-etcd-3.2.8
+NAME               = etcd-docker-kubernetes-weave
 VERSION            = 1.7.8
 VERSION_ALIASES    = 1.7.8
 TITLE              = etcd-docker-kubernetes-weave-1.7.8-etcd-3.2.8
