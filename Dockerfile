@@ -29,6 +29,8 @@ RUN apt-get -q update \
         aufs-tools \
         btrfs-tools \
         bridge-utils \
+        build-essential \
+        libssl-dev \
         cgroupfs-mount \
         docker-engine=1.12.6-0~ubuntu-xenial \
         jq \
@@ -37,9 +39,14 @@ RUN apt-get -q update \
         kmod \
         lxc \
         python-setuptools \
+        parted \
+        ceph-fs-common \
+        ceph-common \
+        vim \
         ufw \
         vlan \
         zerotier-one \
+        unattended-upgrades \
         && apt-get clean
 
 # Do not upgrade Docker
@@ -49,6 +56,9 @@ RUN apt-mark hold docker-engine
 RUN mkdir -p /opt/cni/bin \
     && curl -fsSL 'https://github.com/containernetworking/cni/releases/download/v0.6.0/cni-amd64-v0.6.0.tgz' | tar xvz -C /opt/cni/bin/ \
     && curl -fsSL 'https://github.com/containernetworking/plugins/releases/download/v0.6.0/cni-plugins-amd64-v0.6.0.tgz' | tar xvz -C /opt/cni/bin/
+
+# Automatic security updates
+RUN dpkg-reconfigure -fnoninteractive unattended-upgrades
 
 # Add local files into the root (extra config etc)
 COPY ./rootfs/ /

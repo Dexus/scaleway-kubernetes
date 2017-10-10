@@ -1,0 +1,10 @@
+[Unit]
+Description=Scaleway Kernel Sources Install
+Documentation=https://github.com/scaleway/kernel-tools
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/scw-install-kernel-tools.sh
+RemainAfterExit=yes
+Type=oneshot
